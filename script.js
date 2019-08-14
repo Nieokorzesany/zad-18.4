@@ -14,33 +14,29 @@ var movies = [
   }
 ];
 
-//var element = React.createElement(
-// "div",
-// {},
-// React.createElement("h1", {}, "Lista filmów"),
-//React.createElement("ul", {}, moviesElements)
-//);
-
 var Movie = React.createClass({
   propTypes: {
-    movie: React.PropTypes.object.isRequired
+    movies: React.PropTypes.array.isRequired
   },
 
   render: function() {
-    movies.map(function(movie) {
-      return React.createElement(
-        "li",
-        { key: movie.id, className: "card" },
-        React.createElement("h2", {}, this.props.movie.title),
-        React.createElement("img", {
-          src: this.props.movie.img
-        }),
-        React.createElement("p", {}, this.props.movie.desc)
-      );
-    });
+    return React.createElement(
+      "div",
+      {},
+      this.props.movies.map(function(movie) {
+        return React.createElement(
+          "li",
+          { key: movie.id, className: "card" },
+          React.createElement("h2", {}, movie.title),
+          React.createElement("img", {
+            src: movie.img
+          }),
+          React.createElement("p", {}, movie.desc)
+        );
+      })
+    );
   }
 });
 
 var element = React.createElement(Movie, { movies: movies });
-
 ReactDOM.render(element, document.getElementById("app"));
