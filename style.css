@@ -1,8 +1,20 @@
+body {
+  display: flex;
+  flex-direction: row;
+}
 li.card {
-  max-height: 500px;
+  display: inline-block;
+  height: 600px;
+  border: 2px solid blue;
+  width: 600px;
+  text-align: center;
 }
 
 .card img {
-  max-height: 400px;
-  max-width: 250px;
+  height: 400px;
+  width: 200px;
+}
+
+.card p {
+  padding: 20px 30px;
 }
