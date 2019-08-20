@@ -1,20 +1,25 @@
 body {
   display: flex;
   flex-direction: row;
+  text-align: center;
 }
 li.card {
   display: inline-block;
   height: 600px;
-  border: 2px solid blue;
   width: 600px;
   text-align: center;
 }
 
 .card img {
   height: 400px;
-  width: 200px;
+  width: 300px;
 }
 
 .card p {
   padding: 20px 30px;
+  font-size: 20px;
+}
+
+.card h2 {
+  color: #26a69a;
 }
